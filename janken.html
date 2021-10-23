@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href=janken_travel.css/style.css>
+  <title>G's旅行</title>
+</head>
+
+<body>
+  <header>
+    <h1>サザエさん</h1>
+  </header>
+
+  <main>
+    <div id="timer">スタート</div>
+    <div>
+      <audio class="sazae_ms" preload="auto">
+        <source controls src="audio/歌詞.mp3">
+      </audio>
+      <div>
+        <h2>MUSIC</h2>
+        <audio controls src="audio/歌詞.mp3"></audio>
+      </div>
+    </div>
+    
+    <!-- <div class="players"> -->
+        <div class="sazae">
+          <p class="janken" id="janken">じゃんけんぽん</p>
+          <img src="janken_travel.img/サザエぽん！.jpg" id="sazae" alt="サザエさん">
+        </div>
+          
+          <div class="command">
+            <div class="gu_btn">
+                <img src="janken_travel.img/グー.jpg">
+            </div>
+            <div class="cho_btn">
+                <img src="janken_travel.img/チョキ.jpg">
+            </div> 
+            <div class="pa_btn">
+                <img src="janken_travel.img/パー.jpg">
+            </div> 
+          </div>
+
+         <div class="u"> 
+            <div class="you_img">
+              <img src="janken_travel.img/カツオ.jpeg" id="you" alt="あなた">
+            </div>
+          
+            <div>
+              <div class="switch">
+                <img src="janken_travel.img/OFF2-cutout.png" id="switch_img" alt="OFF">
+              </div>   
+          </div>
+        </div>
+            
+          </div>
+          <!-- <div><p id="com_hannd">コンピュータの出した手は？</p></div>
+          <div><p id="my_hand">自分の手は？</p></div> -->
+          <div><p id="result">結果は？</p></div>
+          <div><p id="winning_per">勝率は？</p></div>
+          
+        </div>
+    </div>
+
+
+
+    <!-- <div class="button_below">
+      <div id="stage_change1" class="stage_change">北海道</div>
+      <div id="stage_change2" class="stage_change">東京</div>
+      <div id="stage_change3" class="stage_change">山口</div>
+      <div id="stage_change4" class="stage_change">福岡</div>   
+      <audio id="right_sigh_sound"></audio>
+      <audio id="some_vioce"></audio>
+    </div> -->
+
+<!-- 
+    <img class="gazo" src="janken_travel.img/カツオ.jpeg" alt=""> -->
+
+
+  </main>
+  <footer>(c)copyrights 2016-2018 Cheeese Academy Fukuoka All RIghts Reserved.</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script src="janken.js/main.js"></script> -->
+  
+
+
+  <script>
+
+    //   const timer = document.getElementById("timer");
+    // }
+
+
+    //  タイマー
+  // function updateTimer() {
+  //   const timeLimit = 180 * 1000;
+
+  //   const t = new Date(startTime + timeLimit - Date.now());
+  //   const m = String(t.getMinutes()).padStart(2, '0');
+  //   const m = String(t.getSeconds()).padStart(2, '0');
+  //   const ms = String(t.getMilliSeconds()).padStart(3, '0');
+  //   timer.textContent = "${m}:${s}.${ms}";
+
+  //   timeoutID = setTimeout(() => {
+  //     updateTimer();
+  //   }, 10);
+  // }
+
+    //ここに処理を追加
+
+
+// じゃんけん（反復）＋勝率計算 --------------------------
+
+
+    // let 数
+    let win = 0; 
+    let game_count = 0;    
+   
+//     $(function(){
+// 	$('.gazo')(randomNumber === 0)(function(){
+// 		if($(this).hasClass('open') == false){
+// 			$(this).attr('src', 'janken_travel.img/右折.png').addClass('open');
+// 		}else{
+// 			$(this).attr('src', 'janken_travel.img/パー.jpg').removeClass('');
+// 		}
+// 	});
+// }); 
+
+  $(".gu_btn").on("click", function(){
+    
+    // サザエ前画像　removeClass hyoji
+    // サザエ前画像　removeClass hyoji
+
+
+    const min = 0;
+    const max = 2;
+
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
+
+    game_count = game_count +1;  // let 勝ち　数＋
+    if(randomNumber === 0)  {
+    $("#result").text("勝ち");
+
+
+    // $("#sazae").attr('src', 'janken_travel.img/チョキ.jpg');
+
+    $('h1').fadeIn("slow", function () {
+  $(this).delay(3000).fadeOut("slow");
+});
+
+
+    win = win+1;
+    }else if (randomNumber === 1) {
+    $("#result").text("あいこ");
+    }else if (randomNumber === 2) {
+    $("#result").text("負け");
+    }else{
+      alert("エラー");
+    }
+
+    $(function(){
+	$('.gazo').click(function(){  
+		if($(this).hasClass('open') == false){
+			$(this).attr('src', 'janken_travel.img/右折.png').addClass('open');
+		}else{
+
+		
+		}
+	});
+}); 
+
+
+    $("#winning_per").text(Math.floor(win / game_count*100)+"%");    // jquery 勝率
+  });
+
+
+  $(".cho_btn").on("click", function(){
+    
+    const min = 0;
+    const max = 2;
+    
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+    game_count = game_count +1;
+    if(randomNumber === 0)  {
+      $("#result").text("勝ち");
+      win = win+1;
+    }else if (randomNumber === 1) {
+      $("#result").text("あいこ");
+    }else if (randomNumber === 2) {
+      $("#result").text("負け");
+    }else{
+      alert("エラー");
+    }
+    $("#winning_per").text(Math.floor(win / game_count*100)+"%");
+
+  });
+
+
+  $(".pa_btn").on("click", function(){
+    
+    const min = 0;
+    const max = 2;
+    
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+    game_count = game_count +1;
+    if(randomNumber === 0)  {
+      $("#result").text("勝ち");
+      win = win+1;
+    }else if (randomNumber === 1) {
+      $("#result").text("あいこ");
+    }else if (randomNumber === 2) {
+      $("#result").text("負け");
+    }else{
+      alert("エラー");
+    }
+    $("#winning_per").text(Math.floor(win / game_count*100)+"%");
+  });
+
+
+  // 勝った時の操作 
+  
+  if(win ===1){
+    endGame();
+    sazae. src = "janken_travel.img/drivepeople.png";
+  }
+
+//  負けた時の操作
+
+
+
+// あいこの時の操作
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>

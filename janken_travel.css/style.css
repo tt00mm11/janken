@@ -1,0 +1,94 @@
+/* main*/
+body {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  font-weight: bold;
+}
+
+#CSS
+h2 {
+  margin-top: 0;
+}
+
+/* sazae */
+.sazae img {
+  margin: auto;
+  width: 300px;
+  height: 200px;
+}
+
+.sazae {
+  text-align: right;
+}
+
+.janken {
+  text-align: center;
+}
+
+
+/* グーチョキーパー */
+.gu_btn img {
+  width: 100px;
+  height: 100px;
+}
+.cho_btn img {
+  width: 100px;
+  height: 100px;
+}
+.pa_btn img {
+  width: 100px;
+  height: 100px;
+}
+
+.command {
+  display: flex;
+  justify-content: center;
+}
+
+.u {
+  display: flex;
+  justify-content: space-between;
+}
+
+.div  {
+  align-items: flex-end;
+}
+
+/* you */
+.you_img img {
+  margin: auto;
+  width: 150px;
+  height: 200px;
+}
+
+.you_img {
+  text-align: left;
+}
+
+
+/* スイッチ */
+.switch img{
+  width: 100px;
+ height: 100px;
+
+ text-align: right;
+}
+.switch{
+  text-align: right;
+}
+
+#timer {
+  background: #00a7ea;
+  font-size: 20px;
+}
+
+
+
+
+footer {
+  padding: 10px;
+  background: #323135;
+  color: #98969c;
+  text-align: center;
+}
