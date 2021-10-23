@@ -6,9 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href=janken_travel.css/style.css>
   <title>G's旅行</title>
+  <div id="video-area">
+    <video id="video" poster="img/movie.jpg" webkit-playsinline playsinline muted autoplay loop>
+  
+    
 </head>
 
 <body>
+<!-- 背景 -->
+
+<div id="video-area">
+  <video id="video" poster="img/movie.jpg" webkit-playsinline playsinline muted autoplay loop>
+    <source src="audio/y2mate.com - サザエさんエンディング最期の家に入る所_360p.mp4" type="video/mp4">
+    <p>動画を再生できる環境ではありません。</p>
+    </video>
+    <!--/video-area--></div>
+    </header>
+
+
+
+
+
   <header>
     <h1>サザエさん</h1>
   </header>
@@ -28,10 +46,21 @@
     <!-- <div class="players"> -->
         <div class="sazae">
           <p class="janken" id="janken">じゃんけんぽん</p>
-          <img src="janken_travel.img/サザエぽん！.jpg" id="sazae" alt="サザエさん">
-        </div>
           
-          <div class="command">
+          <div class="sazae_img">
+            <img src="janken_travel.img/サザエぽん！.jpg" id="sazae" alt="サザエさん">
+          </div>
+        </div>
+  
+          <div class="fade_img">
+           <img src="janken_travel.img/グー.jpg" id="sazae_gu">
+           <img src="janken_travel.img/チョキ.jpg" id="sazae_gu">
+           <img src="janken_travel.img/パー.jpg" id="sazae_gu">
+          </div>
+
+        
+          <!-- じゃんけんボタン -->
+          <div class="command">  
             <div class="gu_btn">
                 <img src="janken_travel.img/グー.jpg">
             </div>
@@ -42,12 +71,12 @@
                 <img src="janken_travel.img/パー.jpg">
             </div> 
           </div>
-
+<!-- カツオ -->
          <div class="u"> 
             <div class="you_img">
               <img src="janken_travel.img/カツオ.jpeg" id="you" alt="あなた">
             </div>
-          
+          <!-- スイッチ -->
             <div>
               <div class="switch">
                 <img src="janken_travel.img/OFF2-cutout.png" id="switch_img" alt="OFF">
@@ -55,13 +84,13 @@
           </div>
         </div>
             
-          </div>
+      
           <!-- <div><p id="com_hannd">コンピュータの出した手は？</p></div>
           <div><p id="my_hand">自分の手は？</p></div> -->
           <div><p id="result">結果は？</p></div>
           <div><p id="winning_per">勝率は？</p></div>
           
-        </div>
+      
     </div>
 
 
@@ -111,47 +140,46 @@
     //ここに処理を追加
 
 
-// じゃんけん（反復）＋勝率計算 --------------------------
+    $('#sazae_gu').hide
 
+// じゃんけん（反復）----------------------------------------------------
 
-    // let 数
     let win = 0; 
     let game_count = 0;    
    
-//     $(function(){
-// 	$('.gazo')(randomNumber === 0)(function(){
-// 		if($(this).hasClass('open') == false){
-// 			$(this).attr('src', 'janken_travel.img/右折.png').addClass('open');
-// 		}else{
-// 			$(this).attr('src', 'janken_travel.img/パー.jpg').removeClass('');
-// 		}
-// 	});
-// }); 
 
+// グーを押した時-------------------------------
   $(".gu_btn").on("click", function(){
-    
-    // サザエ前画像　removeClass hyoji
-    // サザエ前画像　removeClass hyoji
-
 
     const min = 0;
     const max = 2;
 
     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
 
-    game_count = game_count +1;  // let 勝ち　数＋
-    if(randomNumber === 0)  {
+    game_count = game_count +1;  // let 勝ち数＋
+    if(randomNumber === 0)  { 
     $("#result").text("勝ち");
 
+// グーで勝った時--------------------
+    // $("#sazae").attr('src', 'janken_travel.img/チョキ.jpg')
+    // // $(this)
+    // .fadeIn(300);
 
-    // $("#sazae").attr('src', 'janken_travel.img/チョキ.jpg');
-
-    $('h1').fadeIn("slow", function () {
-  $(this).delay(3000).fadeOut("slow");
+    $('#sazae_gu').fadeIn("slow", function () {
+  $(this).fadeOut("slow");
 });
 
+// $(function(){
+//   $(".fade-img img:not(:first-child)").hide();
+//   setInterval(function() {
+//     $(".fade-img img:first-child").fadeOut("slow").next("img").fadeIn("slow").end().appendTo(".fade-img");
+//   },1000);
+// });
 
-    win = win+1;
+
+
+
+    win = win+1;    //勝ちカウントをする
     }else if (randomNumber === 1) {
     $("#result").text("あいこ");
     }else if (randomNumber === 2) {
@@ -176,63 +204,62 @@
   });
 
 
-  $(".cho_btn").on("click", function(){
-    
-    const min = 0;
-    const max = 2;
-    
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    
-    game_count = game_count +1;
-    if(randomNumber === 0)  {
-      $("#result").text("勝ち");
-      win = win+1;
-    }else if (randomNumber === 1) {
-      $("#result").text("あいこ");
-    }else if (randomNumber === 2) {
-      $("#result").text("負け");
-    }else{
-      alert("エラー");
-    }
-    $("#winning_per").text(Math.floor(win / game_count*100)+"%");
-
-  });
 
 
-  $(".pa_btn").on("click", function(){
-    
-    const min = 0;
-    const max = 2;
-    
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    
-    game_count = game_count +1;
-    if(randomNumber === 0)  {
-      $("#result").text("勝ち");
-      win = win+1;
-    }else if (randomNumber === 1) {
-      $("#result").text("あいこ");
-    }else if (randomNumber === 2) {
-      $("#result").text("負け");
-    }else{
-      alert("エラー");
-    }
-    $("#winning_per").text(Math.floor(win / game_count*100)+"%");
-  });
 
 
-  // 勝った時の操作 
+
+// チョキ押した時-----------------------------
   
-  if(win ===1){
-    endGame();
-    sazae. src = "janken_travel.img/drivepeople.png";
-  }
+$(".cho_btn").on("click", function(){
+    
+    const min = 0;
+    const max = 2;
+    
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+    game_count = game_count +1;
+    if(randomNumber === 0)  {
+      $("#result").text("勝ち");
+      win = win+1;
+    }else if (randomNumber === 1) {
+      $("#result").text("あいこ");
+    }else if (randomNumber === 2) {
+      $("#result").text("負け");
+    }else{
+      alert("エラー");
+    }
+    $("#winning_per").text(Math.floor(win / game_count*100)+"%");
+  });
 
-//  負けた時の操作
 
 
 
-// あいこの時の操作
+
+
+// パー押した時--------------------------
+ 
+$(".pa_btn").on("click", function(){
+    
+    const min = 0;
+    const max = 2;
+    
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+    game_count = game_count +1;
+    if(randomNumber === 0)  {
+      $("#result").text("勝ち");
+      win = win+1;
+    }else if (randomNumber === 1) {
+      $("#result").text("あいこ");
+    }else if (randomNumber === 2) {
+      $("#result").text("負け");
+    }else{
+      alert("エラー");
+    }
+    $("#winning_per").text(Math.floor(win / game_count*100)+"%");
+  });
+
 
 
 
