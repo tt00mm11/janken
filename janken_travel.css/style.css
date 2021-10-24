@@ -14,7 +14,7 @@ body {
   height: 100vh;/*高さを全画面にあわせる*/
 } 
 
-#video-area{
+.video-area{
   position: fixed;
   z-index: -1;/*最背面に設定*/
   top: 0;
@@ -42,10 +42,11 @@ body {
 #CSS
 h2 {
   margin-top: 0;
+}
 
 
 /* sazae */
-.sazae_img {
+.sazae_img #sazae{
   width: 1200px;
   height: 800px;
   top: 50px; l: 50px;
@@ -88,6 +89,11 @@ h2 {
 .command {
   display: flex;
   justify-content: center;
+  text-align: center;
+}
+
+.u .command {
+  display: 
 }
 
 .u {
@@ -128,7 +134,9 @@ h2 {
 }
 
 
-
+#p {
+  color: aliceblue;
+}
 
 footer {
   padding: 10px;
