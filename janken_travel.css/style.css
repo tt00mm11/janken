@@ -49,7 +49,9 @@ h2 {
 .sazae_img #sazae{
   width: 1200px;
   height: 800px;
-  top: 50px; l: 50px;
+  top:100px;
+  right:150px;
+ 
 }
 
 .sazae {
@@ -62,9 +64,8 @@ h2 {
   
 }
 .fade-img img {
-  /* position: absolute; */
-/* flex: auto; */
-  top: 50px; l: 50px;
+position: absolute;
+flex: auto;
 } 
 
 .janken {
@@ -93,7 +94,7 @@ h2 {
 }
 
 .u .command {
-  display: 
+  display:flex
 }
 
 .u {
