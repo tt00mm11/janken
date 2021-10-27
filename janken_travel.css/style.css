@@ -39,9 +39,29 @@ body {
   min-width: 100%;
 }
 
-/* .header{
+/* main */
   
-} */
+h1 .a {
+  color: hsl(0, 80%, 70%);
+}
+h1 .b {
+  color: hsl(40, 80%, 70%);
+}
+h1 .c {
+  color: hsl(80, 80%, 70%);
+}
+h1 .d {
+  color: hsl(120, 80%, 70%);
+}
+h1 .e {
+  color: hsl(160, 80%, 70%);
+}
+h1 .f {
+  color: hsl(180, 80%, 70%);
+}
+h1 .g {
+  color: hsl(200, 80%, 70%);
+}
 
 .audio {
   display: flex;
@@ -52,6 +72,11 @@ body {
   color: aliceblue;
 }
 
+h1 {
+  background: #f6f6f7;
+  font-size: 55px;
+  text-align: center;
+}
 
 /* sazae */
 #sazae {
@@ -61,8 +86,8 @@ body {
 
 .fade_img {
   position: fixed;
-  top: 24%;
-  right: 6%;
+  top: 25%;
+  right: 9%;
   transform: translate(-50%, -50%);
 }
 
@@ -94,12 +119,12 @@ body {
 .sazae_img {
   position: fixed;
   top: 13%;
-  right: 2px;
+  right: 63px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background-image: url(../janken_travel.img/サザエぽん！.jpg);
   background-size: cover;
 }
@@ -116,8 +141,8 @@ body {
 
 .fade-img img {
   display: none;
-position: absolute;
-flex: auto;
+  position: absolute;
+  flex: auto;
 } 
 
 .empty {
@@ -157,8 +182,7 @@ flex: auto;
 
 .you_img img {
   margin: auto;
-  width: 600px;
-  height: 600px;
+  height: 700px;
 }
 
 .you_img {
@@ -182,16 +206,13 @@ flex: auto;
   text-align: right;
 }
 
-#timer {
-  background: #f6f6f7;
-  font-size: 55px;
-  text-align: center;
-}
+
 
 
 #result, #winning_per {
-  background: #00a7ea;
+  background: #ffffff;
   font-size: 50px;
+  text-align: center;
   /* display: flex;
   justify-content: center;
   align-items: center;

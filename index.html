@@ -20,20 +20,27 @@
     </video>
     <!--/video-area--></div>
     
-
-
-
-  <main>
-    <div>
-      <div>
-        <audio src="audio/歌詞.mp3" id="audio"></audio>
-      </div>
-      <div>
-        <h1>じゃんけんぽん</h1> 
-      </div>
-    </div>
     
-    <!-- <div class="players"> -->
+    
+    
+    <main>
+
+      <div>
+        <div>
+          <audio src="audio/歌詞.mp3" id="audio"></audio>
+        </div>
+          <h1>
+            <span class="a">じ</span>
+            <span class="b">ゃ</span>
+            <span class="c">ん</span>
+            <span class="d">け</span>
+            <span class="e">ん</span>
+            <span class="f">ぽ</span>
+            <span class="g">ん</span>
+          </h1> 
+      </div>
+      
+      <!-- <div class="players"> -->
        
           
         <div class="sazae_img">
@@ -84,14 +91,17 @@
                 </div> -->
              
 
-          </div>
+            </div>
         </div>
             
       
           <!-- <div><p id="com_hannd">コンピュータの出した手は？</p></div>
           <div><p id="my_hand">自分の手は？</p></div> -->
-          <div>
-          <div id="timer">スタート</div>
+
+
+       
+        
+        <div>
           <div><p id="result">結果は？</p></div>
           <div><p id="winning_per">勝率は？</p></div>
         </div>
@@ -144,17 +154,17 @@
   // }
 
     //ここに処理を追加
-
+    
 
 
     
     // スタートボタンを押したら
-    $('.switch_on').click(function(){
-      $('.switch_on').children('img').attr('src',"janken_travel.img/ON2-cutout.png");
+  $('.switch_on').click(function(){
+  $('.switch_on').children('img').attr('src',"janken_travel.img/ON2-cutout.png");
   $('#audio').get(0).play();
 });
 // $('#videoPlay').click(function(){
-//   $('#video').get(0).play();
+// $('#video').get(0).play();
 // });
     
     // カウントダウンスタート
@@ -177,6 +187,23 @@
     game_count = game_count +1;  // let 勝ち数＋
     if(randomNumber === 0)  { 
     $("#result").text("勝ち");
+
+
+//local strage で入れようとしたやつ
+
+
+// // データ保存
+//   $("#gu_bun").on("click", function() { //結果を保存
+// // inputの内容をtitle,textに保存する
+//   const result = $("#result").val();
+// // ローカルストレージのmemoに取得した内容を登録、更新する
+//   localStorage.setItem("memo", result);
+
+//   console.log("memo",result);
+//     });
+
+
+    
 
 // グーで勝った時--------------------
 
@@ -276,6 +303,7 @@ $(".pa_btn").on("click", function(){
     game_count = game_count +1;
     if(randomNumber === 0)  {
       $("#result").text("勝ち");
+
 // 勝った時--------------------
 
 // フェードインアウト
@@ -305,6 +333,9 @@ $('#sazae_gu').addClass('appear');
     }
     $("#winning_per").text(Math.floor(win / game_count*100)+"%");
   });
+
+
+  
 
 
 
